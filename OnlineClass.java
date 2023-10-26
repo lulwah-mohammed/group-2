@@ -53,7 +53,7 @@ public static void main(String[] args) {
 
 }
 
-class Schedule {
+static class Schedule {
     private List<OnlineClass> classes = new ArrayList<>();
 
     public void addClass(OnlineClass onlineClass) {
