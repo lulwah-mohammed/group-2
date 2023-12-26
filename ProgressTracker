@@ -1,0 +1,37 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class ProgressTracker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Map<String, Integer> studentProgress = new HashMap<>();
+
+        // Collect student names and their respective progress
+        System.out.print("Enter the number of students: ");
+        int numStudents = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+
+        for (int i = 0; i < numStudents; i++) {
+            System.out.print("Enter the name of student " + (i + 1) + ": ");
+            String studentName = scanner.nextLine();
+            System.out.print("Enter the progress of " + studentName + " (in percentage): ");
+            int progress = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline character
+
+            studentProgress.put(studentName, progress);
+        }
+
+        // Display the progress of each student
+        System.out.println("Progress Tracking:");
+
+        for (Map.Entry<String, Integer> entry : studentProgress.entrySet()) {
+            String studentName = entry.getKey();
+            int progress = entry.getValue();
+            System.out.println(studentName + ": " + progress + "%");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
